@@ -1,0 +1,14 @@
+name: django
+dependencies:
+- django=1.7.3=py27_0
+- gunicorn=19.1.0=py27_0
+- openssl=1.0.1k=0
+- pastedeploy=1.5.2=py27_1
+- psycopg2=2.6=py27_0
+- python=2.7.9=1
+- readline=6.2=2
+- setuptools=12.2=py27_0
+- sqlite=3.8.4.1=0
+- system=5.8=1
+- tk=8.5.15=0
+- zlib=1.2.8=0
