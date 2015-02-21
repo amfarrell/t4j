@@ -4,6 +4,7 @@ dependencies:
 - gunicorn=19.1.0=py27_0
 - openssl=1.0.1k=0
 - pastedeploy=1.5.2=py27_1
+- pip=6.0.8=py27_0
 - psycopg2=2.6=py27_0
 - python=2.7.9=1
 - readline=6.2=2
@@ -12,7 +13,11 @@ dependencies:
 - system=5.8=1
 - tk=8.5.15=0
 - zlib=1.2.8=0
+- pip:
+  - django-email-extras==0.3.1
+  - django-forms-builder==0.12.1
+  - future==0.9.0
+  - python-gnupg==0.3.7
+  - sphinx-me==0.3
+  - unidecode==0.4.17
 
-channels:
-- defaults
-- from://binstar.org/trent
