@@ -266,7 +266,7 @@ class AnnualReport(models.Model):
        ("Other", "Other"),
     )
     ward_county = models.CharField(max_length=20, choices=COUNTIES, default="Harris")
-    docket_number = CharField(max_length=30, help_text='This is the case number that the court uses to identify the case.', blank=False)
+    docket_number = models.CharField(max_length=30, help_text='This is the case number that the court uses to identify the case.', blank=False)
     ward_name = models.CharField(max_length=50, help_text='The full name (including middle name) of the person under guardianship.', blank=False)
     ward_dob = models.DateField(auto_now=False, auto_now_add=False, help_text='Please use the following format: <em>YYYY-MM-DD</em>.')
     ward_current_age = models.IntegerField(help_text='The current age (in years) of the person under guardianship.')
