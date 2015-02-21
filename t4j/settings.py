@@ -56,16 +56,28 @@ WSGI_APPLICATION = 't4j.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django-t4j',
-        'USER': 'dj-t4j',
-        'PASSWORD': 'reus actus',
-        'HOST': 'localhost',
-        'POST': '',
+if os.environ.get('PRODUCTION'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'django-t4j',
+            'USER': 'dj-t4j',
+            'PASSWORD': 'reus actus',
+            'HOST': 'localhost',
+            'POST': '',
+        }
     }
-}
+    STATIC_ROOT = '/home/web/t4j/static/'
+    print(STATIC_ROOT)
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -84,5 +96,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/home/web/t4j/static/'
